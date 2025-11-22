@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<opencv_storage>
+  <CalibrationSettings>
+    
+    <CameraResolutionWitdh>1280</CameraResolutionWitdh>
+    <CameraResolutionHeight>960</CameraResolutionHeight>
+
+    <VideoFrameRate>30</VideoFrameRate>
+    <CameraAutoExposure>1</CameraAutoExposure>
+
+    <!-- Dimensões internas do tabuleiro (número de cantos internos) -->
+    <BoardSizeWidth>8</BoardSizeWidth>
+    <BoardSizeHeight>6</BoardSizeHeight>
+
+    <!-- Tamanho do quadrado do tabuleiro (mm) -->
+    <SquareSize>30</SquareSize>
+
+    <!-- Entrada: usar webcam 0 -->
+    <CameraID>0</CameraID>
+
+    <!-- Delay entre capturas automáticas (ms) -->
+    <InputDelay>150</InputDelay>
+
+    <!-- Quantidade de imagens necessárias para calibrar -->
+    <CalibrateNrOfFrameToUse>40</CalibrateNrOfFrameToUse>
+
+    <!--Arquivo de saída dos parâmetros-->
+    <OutputFile>"camera_output.xml"</OutputFile>
+
+  </CalibrationSettings>
+</opencv_storage>
