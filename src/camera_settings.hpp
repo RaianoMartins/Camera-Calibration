@@ -17,7 +17,6 @@ class CalibrationSettings
         void validate();
         void write(cv::FileStorage& fs) const;
         void read(const cv::FileNode& node);
-        cv::Mat nextImage();
 
     public:
         float _square_size;              // Tamanho do quadrado
@@ -34,7 +33,6 @@ class CalibrationSettings
         bool valid_input;
 };
 
-bool runCalibrationAndSave(CalibrationSettings&, std::vector<std::vector<cv::Point3f>>, std::vector<std::vector<cv::Point2f>>, cv::Size);
 float averageCornerDistance(std::vector<cv::Point2f>&, std::vector<cv::Point2f>&);
 
 static inline void read (const cv::FileNode& node, CalibrationSettings& settings, const CalibrationSettings& defaultSettings = CalibrationSettings())

@@ -116,7 +116,7 @@ int main()
                         double err = cv::calibrateCamera( obj_points, img_points, frame.size(), camera_matrix, dist_coeffs, rvecs, tvecs, calibrate_flags, criteria);
 
                         std::cout << "\n==== CALIBRAÇÃO COMPLETA ====\n";
-                        std::cout << "Erro médio de reprojeção: " << err << "\n";
+                        std::cout << "Erro de reprojeção médio: " << err << "\n";
                         std::cout << "Matriz da câmera:\n" << camera_matrix << "\n";
                         std::cout << "Coeficientes de distorção:\n" << dist_coeffs << "\n";
 
@@ -129,18 +129,15 @@ int main()
             }
         }
 
-        // === Mensagem de Status ===
         std::string msg =
             (mode == DETECTION)  ? "Pressione 'g' para iniciar captura" :
             (mode == CAPTURING)  ? "Capturando (" + std::to_string(captured) + "/" + std::to_string(settings._n_frames) + ")" :
                                    "Calibrado!";
 
-        cv::putText(frame, msg, {10,30}, cv::FONT_HERSHEY_SIMPLEX,
-                    0.8, {0,255,0}, 2);
+        cv::putText(frame, msg, {10,30}, cv::FONT_HERSHEY_SIMPLEX, 0.8, {0,255,0}, 2);
 
         cv::imshow("Calibracao da camera", frame);
 
-        // === Controles ===
         char key = cv::waitKey(1);
         if (key == 27) break; // ESC
 
